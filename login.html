@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Login</title>
+        <script type="text/javascript">
+            function validatelg(){
+              var name=document.login.fname.value;
+              var pwd=document.login.fpwd.value;
+              var pat=new RegExp("^[a-zA-Z\_\.]*$");
+              if(pat.test(name) && name.length>6 && pwd.length>6){
+                alert("Login Success");
+              }
+              else{
+                alert("Invalid Username or Password");
+              }
+            }
+        </script>
+    </head>
+	<body>
+	   <form name="login" method="post" action="login.html">
+        <table width="20%" align="center">
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="fname"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="fpwd"></td>
+        </tr>
+        <tr>
+            <td><input type="reset"></td>
+            <td><input type="submit" value="Login" onclick="validatelg()"></td>
+        </tr>
+        </table>
+    </form>
+	</body>
+</html>

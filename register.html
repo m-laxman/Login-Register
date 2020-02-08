@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>Register form</title>
+	<script type="text/javascript">
+		function vname(){
+			var name=document.regform.fname.value;
+			var numbs=new RegExp("^[a-zA-Z]*$");
+			var alr="Name should contain only alphabets and the length should not be less than 6 characters";
+			if(!(numbs.test(name)) || name.length<6)
+				alert(alr);
+		}
+		function vpwd(){
+			var pwd=document.regform.fpwd.value;
+			var pat=new RegExp("\W\w");
+			var alr="Password should not be less than 6 characters length";
+			if(!(pat.test(pwd)) && pwd.length<6)
+				alert(alr);
+		}
+		function vmail(){
+			var mail=document.regform.fmail.value;
+			var mai=new RegExp("^([a-zA-Z0-9\_\.]*)\@([a-zA-Z0-9\_]*)\.([a-zA-Z\.]*)");
+			var alr="Email ID should not contain any invalid and must follow the standard pattern name@domain.com";
+			if(!(mai.test(mail)))
+				alert(alr);
+		}
+		function vphone(){
+			var phone=document.regform.fphone.value;
+			var ph=/[0-9]/;
+			var alr="Phone number should contain 10 digits only";
+			if(phone.length<6 || !phone.match(ph) || phone.length>10)
+				alert(alr);
+		}
+	</script>
+</head>
+<body>
+<form action="registration.html" name="regform" >
+	<table align="center">
+		<tr>
+			<td>Name:  </td>
+			<td><input type="text" name="fname" onblur="vname()"></td>
+		</tr>
+		<tr>
+		<tr>
+			<td>Password: </td>
+			<td><input type="password" name="fpwd" onblur="vpwd()"></td>
+        </tr>
+        <tr>
+			<td>Email: </td>
+			<td><input type="text" name="fmail" onblur="vmail()"></td>
+        </tr>
+        <tr>
+			<td>Phone no:</td>
+			<td>
+				<select>
+					<option>+91</option>
+					<option>+92</option>
+					<option>+93</option>
+				</select>
+				<input type="phone" placeholder="9999999999" name="fphone" onblur="vphone()">
+			</td>
+		</tr>
+		<tr>
+			<td>Gender: </td>
+			<td>
+				<input type="radio" name="Gender" value="male" checked>Male
+				<input type="radio" name="Gender" value="female">Female
+			</td>
+        </tr>
+		<tr>
+			<td>Date of Birth  </td>
+			<td><input type="date" name="dob"></td>
+		</tr>
+        <tr>
+			<td>Languages Known</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="l1" value="E">English</td></tr>
+        <tr>
+					<td><input type="checkbox" name="l2" value="H">Hindi</td></tr>
+        <tr>
+					<td><input type="checkbox" name="l3" value="T">Telugu</td></tr>
+          <td><input type="checkbox" name="l4" value="Ta">Tamil</td>
+		</tr>
+        <tr>
+			<td>Address  </td>
+			<td><textarea rows="4" cols="50"></textarea></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Submit"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

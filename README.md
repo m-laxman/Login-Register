@@ -1,2 +1,2 @@
-#Login_Registration_Validation
+#Login Registration Validation
 Regular expressions in JavaScript
